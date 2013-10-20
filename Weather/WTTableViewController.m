@@ -11,8 +11,6 @@
 #import "NSDictionary+weather.h"
 #import "NSDictionary+weather_package.h"
 
-static NSString *const baseURLString
- = @"http://www.raywenderlich.com/downloads/weather_sample/";
 
 @interface WTTableViewController ()
 
@@ -83,35 +81,9 @@ static NSString *const baseURLString
     [self.tableView reloadData];
 }
 
-//#pragma mark 131020 Start
-//- (IBAction)jsonTapped:(id)sender
-//{
-//    NSString *weatherUrl = [NSString stringWithFormat:@"%@weather.php?format=json",baseURLString];
-//    NSURL *url = [NSURL URLWithString:weatherUrl];
-//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-//
-//
-//    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
-//        success:^(NSURLRequest *request , NSHTTPURLResponse *response,id JSON)
-//                {
-//                    self.weather = (NSDictionary *)JSON;
-//                    self.title = @"JSON Retrieved";
-//                    [self.tableView reloadData];
-//                }
-//        failure:^(NSURLRequest *request , NSHTTPURLResponse *response,NSError *error,id JSON)
-//                {
-//                    UIAlertView *av =[[UIAlertView alloc]initWithTitle:@"Error retrieving weather!"
-//                                                               message:[NSString stringWithFormat:@"%@",error]
-//                                                            delegate:nil
-//                                                     cancelButtonTitle:@"OK"
-//                                                     otherButtonTitles:nil];
-//                    [av show];
-//                }];
-//    [operation start];
-//
-//
-//}
-//#pragma mark 131020 Final
+- (IBAction)jsonTapped:(id)sender
+{
+}
 
 - (IBAction)plistTapped:(id)sender
 {
@@ -136,31 +108,11 @@ static NSString *const baseURLString
     return 2;
 }
 
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//        //Return the number of rows in the section
-//    if (!self.weather)
-//    {
-//        return 0;
-//    }
-//
-//    switch (section)
-//    {
-//        case 0:
-//        {
-//            return 1;
-//        }
-//        case 1:
-//        {
-//            NSArray *upcomingWeather = [self.weather upcomingWeather];
-//            return [upcomingWeather count];
-//        }
-//
-//        default:
-//            return 0;
-//    }
-//}
-//
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 0;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"WeatherCell";

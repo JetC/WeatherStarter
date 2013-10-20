@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0EA9E8721813F7AF0057FC0E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA9E8711813F7AF0057FC0E /* Security.framework */; };
 		CCB3658816CA0F32003B2CB6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCB3658716CA0F32003B2CB6 /* SystemConfiguration.framework */; };
 		CCB3658A16CA0F36003B2CB6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCB3658916CA0F36003B2CB6 /* MobileCoreServices.framework */; };
 		D233D07016B400EF005212DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D233D06F16B400EF005212DE /* UIKit.framework */; };
@@ -49,7 +48,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0EA9E8711813F7AF0057FC0E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		CCB3658716CA0F32003B2CB6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CCB3658916CA0F36003B2CB6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		D233D06B16B400EF005212DE /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,7 +101,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EA9E8721813F7AF0057FC0E /* Security.framework in Frameworks */,
 				CCB3658A16CA0F36003B2CB6 /* MobileCoreServices.framework in Frameworks */,
 				CCB3658816CA0F32003B2CB6 /* SystemConfiguration.framework in Frameworks */,
 				D233D11D16B441E3005212DE /* CoreLocation.framework in Frameworks */,
@@ -136,7 +133,6 @@
 		D233D06E16B400EF005212DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0EA9E8711813F7AF0057FC0E /* Security.framework */,
 				D233D07316B400EF005212DE /* CoreGraphics.framework */,
 				D233D11C16B441E3005212DE /* CoreLocation.framework */,
 				D233D07116B400EF005212DE /* Foundation.framework */,
@@ -385,7 +381,6 @@
 				GCC_PREFIX_HEADER = "Weather/Weather-Prefix.pch";
 				INFOPLIST_FILE = "Weather/Weather-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -397,7 +392,6 @@
 				GCC_PREFIX_HEADER = "Weather/Weather-Prefix.pch";
 				INFOPLIST_FILE = "Weather/Weather-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
