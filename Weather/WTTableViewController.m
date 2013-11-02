@@ -11,7 +11,10 @@
 #import "NSDictionary+weather.h"
 #import "NSDictionary+weather_package.h"
 
+static NSString *const BaseURLString = @"http://news.ziqiang.net/api/article/?n=15&s=%E5%85%A8%E9%83%A8&p=1";
 
+    //http://news.ziqiang.net/api/article/?n=15&s=%E5%85%A8%E9%83%A8&p=1
+    //encodedString	%E5%85%A8%E9%83%A8
 @interface WTTableViewController ()
 
 @property(strong) NSDictionary *weather;
@@ -81,8 +84,32 @@
     [self.tableView reloadData];
 }
 
-- (IBAction)jsonTapped:(id)sender
-{
+- (IBAction)jsonTapped:(id)sender {
+        // 1
+    NSString *weatherUrl = [NSString stringWithFormat:@"%@weather.php?format=json", BaseURLString];
+    NSURL *url = [NSURL URLWithString:weatherUrl];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+
+        // 2
+    AFJSONRequestOperation *operation =
+    [AFJSONRequestOperation JSONRequestOperationWithRequest:request
+     // 3
+                                                    success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                                        self.weather  = (NSDictionary *)JSON;
+                                                        self.title = @"JSON Retrieved";
+                                                        [self.tableView reloadData];
+                                                    }
+     // 4
+                                                    failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                                        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Weather"
+                                                                                                     message:[NSString stringWithFormat:@"%@",error]
+                                                                                                    delegate:nil
+                                                                                           cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                                                        [av show];
+                                                    }];
+    
+        // 5
+    [operation start];
 }
 
 - (IBAction)plistTapped:(id)sender
@@ -110,7 +137,22 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+        // Return the number of rows in the section.
+
+    if(!self.weather)
+        return 0;
+
+    switch (section) {
+        case 0:{
+            return 1;
+        }
+        case 1:{
+            NSArray *upcomingWeather = [self.weather upcomingWeather];
+            return [upcomingWeather count];
+        }
+        default:
+            return 0;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

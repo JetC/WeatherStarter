@@ -11,27 +11,27 @@
 @interface NSDictionary (weather)
 
 
-
--(NSNumber *)cloudCover;
--(NSNumber *)humidity;
--(NSDate *)observationTime;
--(NSNumber *)precipMM;
--(NSNumber *)pressue;
--(NSNumber *)tempC;
--(NSNumber *)tempF;
--(NSNumber *)visibility;
--(NSNumber *)weatherCode;
--(NSString *)windDir16Point;
--(NSNumber *)windDirDegree;
--(NSNumber *)windSpeedKmph;
--(NSNumber *)windSpeedMiles;
--(NSString *)weatherDescription;
--(NSString *)weatherIconURL;
--(NSDate *)date;
--(NSNumber *)tempMaxC;
--(NSNumber *)tempMaxF;
--(NSNumber *)tempMinC;
--(NSNumber *)tempMinF;
+//
+//-(NSNumber *)cloudCover;
+//-(NSNumber *)humidity;
+//-(NSDate *)observationTime;
+//-(NSNumber *)precipMM;
+//-(NSNumber *)pressue;
+//-(NSNumber *)tempC;
+//-(NSNumber *)tempF;
+//-(NSNumber *)visibility;
+//-(NSNumber *)weatherCode;
+//-(NSString *)windDir16Point;
+//-(NSNumber *)windDirDegree;
+//-(NSNumber *)windSpeedKmph;
+//-(NSNumber *)windSpeedMiles;
+//-(NSString *)weatherDescription;
+//-(NSString *)weatherIconURL;
+//-(NSDate *)date;
+//-(NSNumber *)tempMaxC;
+//-(NSNumber *)tempMaxF;
+//-(NSNumber *)tempMinC;
+//-(NSNumber *)tempMinF;
 
 
 @end
